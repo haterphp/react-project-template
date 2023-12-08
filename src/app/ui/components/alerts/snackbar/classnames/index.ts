@@ -1,0 +1,9 @@
+const SNACKBAR_CLASSNAME = 'snackbar'
+const SNACKBAR_MESSAGE_CLASSNAME = 'snackbar-message'
+const SNACKBAR_MESSAGE_ICON_CLASSNAME = 'snackbar-message-icon'
+
+export { 
+    SNACKBAR_CLASSNAME, 
+    SNACKBAR_MESSAGE_CLASSNAME,
+    SNACKBAR_MESSAGE_ICON_CLASSNAME
+}

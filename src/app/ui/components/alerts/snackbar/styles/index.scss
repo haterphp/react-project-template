@@ -1,0 +1,27 @@
+.snackbar {
+  @apply fixed left-5 bottom-5 
+  flex flex-col gap-5
+  w-full max-w-[450px];
+}
+
+.snackbar-message {
+  @apply transition-transform;
+}
+
+.snackbar-message-icon {
+  @apply w-[35px] 
+  h-[35px] p-2
+  cursor-pointer hover:bg-slate-100 active:bg-slate-200 rounded;
+}
+
+.snackbar-message.alert--rounded {
+  .snackbar-message-icon {
+    @apply rounded-full;
+  }
+}
+
+.snackbar-message.alert--filled {
+  .snackbar-message-icon {
+    @apply hover:bg-slate-100/10 active:bg-slate-100/20;
+  }
+}

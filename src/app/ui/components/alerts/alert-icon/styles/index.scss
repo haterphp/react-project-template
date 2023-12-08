@@ -1,0 +1,25 @@
+$variants: "primary", "success", "warning", "error";
+
+.alert-icon {
+  @apply h-full;
+
+  /* Varinats */
+
+  &.alert-icon--standart {
+    @apply p-3 border-l-2;
+
+    @each $variant in $variants {
+      &.alert-icon--#{$variant} {
+        border-left-color: theme("colors.alerts.#{$variant}");
+      }
+    }
+  }
+
+  &.alert-icon--filled {
+    @apply p-3 pl-0;
+  }
+
+  &.alert-icon--rounded {
+    @apply p-3 mr-3 rounded-full bg-alerts-backgrounds-icon;
+  }
+}

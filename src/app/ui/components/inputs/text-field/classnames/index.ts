@@ -1,0 +1,3 @@
+const TEXTFIELD_MULTILINE_INPUT_CLASSNAME = 'input-inner--multiline'
+
+export { TEXTFIELD_MULTILINE_INPUT_CLASSNAME }

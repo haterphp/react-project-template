@@ -1,0 +1,154 @@
+$variants: "primary", "secondary", "success", "warning", "error";
+
+/* Base styles */
+
+.btn {
+  @apply px-[16px] py-[8px]
+  text-base
+  border-transparent
+  bg-transparent
+  rounded-lg 
+  transition-all 
+  outline-none
+  leading-[20px]
+  cursor-pointer
+  flex gap-1 items-center;
+}
+
+/* Sizes */
+
+.btn--large {
+  @apply px-[16px] py-[8px] leading-[24px];
+}
+
+.btn--small {
+  @apply px-[12px] py-[8px] leading-[16px];
+}
+
+/* Colors and variants */
+
+@each $variant in $variants {
+  .btn--filled.btn--#{$variant} {
+    @apply shadow shadow-transparent;
+
+    color: theme("colors.common.text.white");
+    background-color: theme("colors.buttons.#{$variant}.default");
+
+    &:hover {
+      background-color: theme("colors.buttons.#{$variant}.hovered");
+    }
+
+    &:active {
+      background-color: theme("colors.buttons.#{$variant}.pressed");
+    }
+
+    &:disabled {
+      color: theme("colors.buttons.disabled") !important;
+      background-color: theme("colors.buttons.disabled" / 15%) !important;
+    }
+
+    & .icon-inner.icon-inner--fill {
+      fill: theme("colors.white");
+    }
+    & .icon-inner.icon-inner--stroke {
+      stroke: theme("colors.white");
+    }
+  }
+
+  .btn--outlined.btn--#{$variant} {
+    color: theme("colors.buttons.#{$variant}.default");
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: theme("colors.buttons.#{$variant}.default");
+
+    &:hover {
+      color: theme("colors.buttons.#{$variant}.hovered");
+      border-color: theme("colors.buttons.#{$variant}.hovered");
+      background-color: theme("colors.buttons.#{$variant}.default" / 15%);
+    }
+
+    &:active {
+      color: theme("colors.buttons.#{$variant}.pressed");
+      border-color: theme("colors.buttons.#{$variant}.pressed");
+      background-color: theme("colors.buttons.#{$variant}.default" / 25%);
+    }
+
+    &:disabled {
+      color: theme("colors.buttons.disabled") !important;
+      border-color: theme("colors.buttons.disabled") !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .btn--smooth.btn--#{$variant} {
+    color: theme("colors.buttons.#{$variant}.default");
+    background: theme("colors.buttons.#{$variant}.default" / 15%);
+
+    &:hover {
+      background: theme("colors.buttons.#{$variant}.hovered" / 15%);
+    }
+
+    &:active {
+      color: theme("colors.buttons.#{$variant}.pressed");
+      background: theme("colors.buttons.#{$variant}.pressed" / 8%);
+    }
+
+    &:disabled {
+      color: theme("colors.buttons.disabled") !important;
+      background-color: theme("colors.buttons.disabled" / 15%) !important;
+    }
+  }
+
+  .btn--text.btn--#{$variant} {
+    color: theme("colors.buttons.#{$variant}.default");
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+
+    &:hover {
+      border-color: theme("colors.buttons.#{$variant}.hovered");
+    }
+
+    &:active {
+      color: theme("colors.buttons.#{$variant}.pressed");
+      border-color: transparent;
+    }
+
+    &:disabled {
+      color: theme("colors.buttons.disabled") !important;
+      border-color: transparent !important;
+    }
+  }
+}
+
+/* Icons */
+// TODO: Требует доработок после добавления Icon компонента
+
+.btn.btn-icon {
+  @apply p-[8px];
+
+  & > span.icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.btn--large.btn-icon {
+  @apply p-[10px];
+
+  & > span.icon {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.btn--small.btn-icon {
+  @apply p-[8px];
+
+  & > span.icon {
+    height: 16px;
+    width: 16px;
+  }
+}

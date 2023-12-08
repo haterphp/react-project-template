@@ -1,0 +1,28 @@
+$variants: "primary", "secondary", "success", "warning", "error", "default";
+
+.icon {
+  @apply block w-[24px] h-[24px];
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.icon--small {
+    @apply w-[20px] h-[20px];
+  }
+
+  &.icon--large {
+    @apply w-[30px] h-[30px];
+  }
+}
+
+@each $variant in $variants {
+  .icon-inner--fill.icon-inner--#{$variant} {
+    fill: theme("colors.icons.#{$variant}");
+  }
+
+  .icon-inner--stroke.icon-inner--#{$variant} {
+    stroke: theme("colors.icons.#{$variant}");
+  }
+}

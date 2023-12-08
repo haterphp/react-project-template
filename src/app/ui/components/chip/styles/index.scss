@@ -1,0 +1,75 @@
+$colors: "primary", "secondary", "success", "warning", "error";
+
+.chip {
+  @apply px-[24px] 
+  py-[10px]
+  rounded-lg
+  text-[14px]
+  leading-[16px]
+  uppercase font-[500] cursor-default;
+
+  &--hovered {
+    @apply cursor-pointer;
+  }
+
+  /* Styles for rounded */
+  &--rounded {
+    @apply rounded-full;
+  }
+
+  /* Sizes styles */
+  &--small {
+    @apply leading-[12px];
+  }
+
+  &--large {
+    @apply leading-[24px];
+  }
+}
+
+@each $color in $colors {
+  .chip--smooth.chip--#{$color} {
+    color: theme("colors.chips.#{$color}.default");
+    background: theme("colors.chips.#{$color}.default" / 15%);
+
+    &.chip--hovered:hover {
+      background: theme("colors.chips.#{$color}.hovered" / 15%);
+    }
+
+    &.chip--hovered:active {
+      color: theme("colors.chips.#{$color}.pressed");
+      background: theme("colors.chips.#{$color}.pressed" / 8%);
+    }
+
+    &:disabled {
+      color: theme("colors.chips.disabled") !important;
+      background-color: theme("colors.chips.disabled" / 15%) !important;
+    }
+  }
+
+  .chip--outlined.chip--#{$color} {
+    color: theme("colors.chips.#{$color}.default");
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: theme("colors.chips.#{$color}.default");
+
+    &.chip--hovered:hover {
+      color: theme("colors.chips.#{$color}.hovered");
+      border-color: theme("colors.chips.#{$color}.hovered");
+      background-color: theme("colors.chips.#{$color}.default" / 15%);
+    }
+
+    &.chip--hovered:active {
+      color: theme("colors.chips.#{$color}.pressed");
+      border-color: theme("colors.chips.#{$color}.pressed");
+      background-color: theme("colors.chips.#{$color}.default" / 25%);
+    }
+
+    &:disabled {
+      color: theme("colors.chips.disabled") !important;
+      border-color: theme("colors.chips.disabled") !important;
+      background-color: transparent !important;
+    }
+  }
+}

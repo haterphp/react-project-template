@@ -25,7 +25,13 @@ module.exports = {
     "./config/eslint/react-jsx/.eslintrc.cjs",
     "./config/eslint/typescript/.eslintrc.cjs",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts", "*.d.ts"],
+  ignorePatterns: [
+    "dist",
+    ".eslintrc.cjs",
+    "vite.config.ts",
+    "*.d.ts",
+    "src/app/ui/*",
+  ],
   plugins: ["react-refresh", "@typescript-eslint", "react-hooks", "import"],
   rules: {
     "linebreak-style": 0,

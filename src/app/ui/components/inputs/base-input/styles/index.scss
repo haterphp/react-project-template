@@ -1,0 +1,65 @@
+.input {
+  @apply border-input-default flex items-start gap-3 py-2 transition-colors text-common-text-dark-main;
+
+  /* Variants */
+
+  &.input-outlined {
+    @apply border rounded-lg overflow-hidden px-4;
+  }
+
+  &.input-standard {
+    @apply border-b;
+  }
+
+  & > .input-inner {
+    @apply outline-none text-[14px] w-full;
+  }
+}
+
+/* Other classes */
+
+.input-group {
+  @apply flex flex-col gap-1;
+}
+
+.input-label {
+  @apply text-[12px] font-semibold transition-colors text-common-text-dark-secondary;
+}
+
+.input-feedback {
+  @apply text-[12px] font-normal transition-colors text-common-text-dark-secondary;
+}
+
+.input-group.input-group--failed {
+  .input {
+    @apply border-input-error;
+  }
+
+  .input-label {
+    @apply text-input-error;
+  }
+
+  .input-feedback {
+    @apply text-input-error;
+  }
+}
+
+.input-group.input-group--focused {
+  .input {
+    @apply border-input-focus;
+  }
+}
+
+.input-group.input-group--success {
+  .input {
+    @apply border-input-success;
+  }
+
+  .input-label {
+    @apply text-input-success;
+  }
+
+  .input-feedback {
+    @apply text-input-success;
+  }
+}
